@@ -29,6 +29,10 @@ func initRouter() *gin.Engine {
 		secured := api.Group("/secured").Use(middlewares.Auth())
 		{
 			secured.GET("/ping", controllers.Ping)
+			secured.GET("/users", controllers.GetUsers)
+			secured.GET("/users/:id", controllers.GetUserById)
+			secured.PUT("users/:id", controllers.UpdateUser)
+			secured.DELETE("users/:id", controllers.DeleteUser)
 		}
 	}
 
