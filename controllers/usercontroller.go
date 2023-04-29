@@ -91,7 +91,6 @@ func UpdateUser(context *gin.Context) {
 }
 
 // Delete User by ID
-
 func DeleteUser(context *gin.Context) {
 	userId := context.Param("id")
 	if !checkIfUserExists(userId) {
